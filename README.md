@@ -27,8 +27,8 @@ mais nítido. A página 10 repetida foi retirada apenas da visualização do sit
 
 O botão “Abrir cardápio” abre um popup próprio, com animação de virar páginas, setas,
 gesto no celular, zoom pelo scroll do mouse ou pinça e WhatsApp sempre acessível. O
-download usa o PDF otimizado em `assets/cardapio-padoka.pdf`, enquanto o arquivo original
-pesado permanece apenas no ambiente local para não ultrapassar o limite de assets da hospedagem.
+download abre o PDF original por um link externo do GitHub; o arquivo pesado não faz
+parte dos assets publicados pelo Cloudflare.
 
 ## SEO local e Google
 
