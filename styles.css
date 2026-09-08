@@ -371,6 +371,16 @@ h1 em, h2 em { color: var(--orange); font-style: italic; }
 }
 .summary-toggle::before { content: "−"; font-size: 15px; line-height: 1; }
 .menu-details:not([open]) .summary-toggle::before { content: "+"; }
+.menu-text-summary { margin-top: 18px; overflow: hidden; border: 1px solid var(--line); border-radius: 17px; background: rgba(255,255,255,.72); }
+.menu-text-summary summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 17px 19px; color: var(--ink); cursor: pointer; font-size: 16px; font-weight: 800; list-style: none; }
+.menu-text-summary summary::-webkit-details-marker { display: none; }
+.menu-text-summary .summary-toggle { flex: 0 0 auto; }
+.menu-text-summary-content { padding: 0 19px 20px; color: var(--muted); }
+.menu-text-summary-content > p { max-width: 780px; margin: 0 0 18px; font-size: 17px; line-height: 1.65; }
+.menu-category-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 28px; margin: 0; padding: 0; list-style: none; }
+.menu-category-list li { display: grid; gap: 4px; padding: 13px 0; border-top: 1px solid var(--line); }
+.menu-category-list strong { color: var(--ink); font-size: 16px; }
+.menu-category-list span { font-size: 15px; line-height: 1.5; }
 .menu-viewer { border-radius: 0; min-height: 690px; }
 .menu-viewer iframe { height: 690px; }
 .menu-inline-actions {
@@ -455,6 +465,10 @@ h1 em, h2 em { color: var(--orange); font-style: italic; }
   .menu-viewer, .menu-viewer iframe { min-height: 460px; height: 460px; }
   .menu-inline-actions { display: grid; grid-template-columns: 1fr; padding: 12px; }
   .menu-inline-actions .button { width: 100%; }
+  .menu-text-summary { margin-top: 12px; }
+  .menu-text-summary summary { padding: 15px 16px; }
+  .menu-text-summary-content { padding-inline: 16px; }
+  .menu-category-list { grid-template-columns: 1fr; }
   .faq-list summary { font-size: 13px; }
   .contact-section { padding-bottom: 90px; }
   .footer-inner { grid-template-columns: 1fr auto; grid-template-areas: "brand social" "tagline tagline" "copyright copyright"; gap: 18px 16px; padding-block: 28px 22px; }
