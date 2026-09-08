@@ -162,12 +162,15 @@ h1 em, h2 em { color: var(--orange); font-style: italic; }
 .contact-copy h2 { max-width: 670px; font-size: clamp(41px, 4vw, 57px); }
 .contact-copy > p:last-child { max-width: 500px; margin: 20px 0 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
 .site-footer { border-top: 1px solid var(--line); }
-.footer-inner { min-height: 112px; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+.footer-inner { min-height: 0; display: grid; grid-template-columns: auto 1fr auto; grid-template-areas: "brand . social" "tagline tagline tagline" "copyright copyright copyright"; align-items: center; gap: 18px 25px; padding: 28px 0 22px; }
+.brand-footer { grid-area: brand; }
 .brand-footer .brand-mark { width: 34px; height: 34px; font-size: 21px; }
 .brand-footer strong { font-size: 23px; }
 .brand-footer small { font-size: 7px; margin-top: 5px; }
-.footer-inner p, .footer-year { color: var(--muted); font-size: 11px; }
+.footer-tagline { grid-area: tagline; justify-self: center; margin: 0; color: var(--muted); font-size: 13px; text-align: center; }
+.footer-year { grid-area: copyright; justify-self: center; color: var(--muted); font-size: 12px; text-align: center; }
 .footer-instagram { display: inline-flex; align-items: center; gap: 8px; color: var(--ink); font-size: 13px; font-weight: 700; transition: color .2s ease, transform .2s ease; }
+.footer-instagram { grid-area: social; justify-self: end; }
 .footer-instagram:hover { color: var(--orange); transform: translateY(-1px); }
 .footer-instagram-icon { width: 19px; height: 19px; fill: none; stroke: currentColor; stroke-width: 1.8; }
 .footer-instagram-dot { fill: currentColor; stroke: none; }
@@ -222,9 +225,8 @@ h1 em, h2 em { color: var(--orange); font-style: italic; }
   .about-stamp { top: 25px; right: 24px; transform: rotate(12deg) scale(.8); }
   .about-decoration { right: -200px; bottom: -130px; transform: rotate(-9deg) scale(.75); transform-origin: bottom right; }
   .contact-section { padding-bottom: 90px; }
-  .footer-inner { display: grid; grid-template-columns: 1fr auto; padding-block: 25px; }
-  .footer-inner p { grid-column: 1 / -1; grid-row: 2; margin: 0; }
-  .footer-year { justify-self: end; }
+  .footer-inner { grid-template-columns: 1fr auto; grid-template-areas: "brand social" "tagline tagline" "copyright copyright"; gap: 18px 16px; padding-block: 28px 22px; }
+  .footer-tagline, .footer-year { justify-self: center; }
   .floating-whatsapp { right: 16px; bottom: 16px; width: 52px; height: 52px; }
 }
 
@@ -438,9 +440,8 @@ h1 em, h2 em { color: var(--orange); font-style: italic; }
   .menu-inline-actions .button { width: 100%; }
   .faq-list summary { font-size: 13px; }
   .contact-section { padding-bottom: 90px; }
-  .footer-inner { display: grid; grid-template-columns: 1fr auto; padding-block: 25px; }
-  .footer-inner p { grid-column: 1 / -1; grid-row: 2; margin: 0; }
-  .footer-year { justify-self: end; }
+  .footer-inner { grid-template-columns: 1fr auto; grid-template-areas: "brand social" "tagline tagline" "copyright copyright"; gap: 18px 16px; padding-block: 28px 22px; }
+  .footer-tagline, .footer-year { justify-self: center; }
 }
 
 @media (min-width: 1041px) {
