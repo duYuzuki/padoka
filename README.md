@@ -26,8 +26,9 @@ página, uma versão JPEG em alta resolução é carregada sob demanda para mant
 mais nítido. A página 10 repetida foi retirada apenas da visualização do site.
 
 O botão “Abrir cardápio” abre um popup próprio, com animação de virar páginas, setas,
-gesto no celular, zoom pelo scroll do mouse ou pinça e WhatsApp sempre acessível. O PDF original de 10 páginas
-continua preservado na raiz como `Cardápio Padoka Site.pdf` para download.
+gesto no celular, zoom pelo scroll do mouse ou pinça e WhatsApp sempre acessível. O
+download usa o PDF otimizado em `assets/cardapio-padoka.pdf`, enquanto o arquivo original
+pesado permanece apenas no ambiente local para não ultrapassar o limite de assets da hospedagem.
 
 ## SEO local e Google
 
