@@ -1188,7 +1188,10 @@ body { font-size: 16px; }
 .flipbook-stage {
   touch-action: none;
   overscroll-behavior: contain;
+  cursor: grab;
+  user-select: none;
 }
+.flipbook-stage.is-panning { cursor: grabbing; }
 .flipbook-page:not(.is-zoomed) {
   display: grid;
   place-items: center;
@@ -1214,7 +1217,9 @@ body { font-size: 16px; }
   overflow: auto;
   overscroll-behavior: contain;
   touch-action: none;
+  cursor: grab;
 }
+.flipbook-stage.is-panning .flipbook-page.is-zoomed { cursor: grabbing; }
 .flipbook-page.is-zoomed .menu-image-page {
   width: auto;
   height: calc(100% * var(--page-zoom));
@@ -1230,6 +1235,8 @@ body { font-size: 16px; }
   max-width: none;
   max-height: none;
   object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
 }
 
 /* WhatsApp: mesma linguagem visual em todos os pontos de contato. */

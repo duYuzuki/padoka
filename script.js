@@ -213,9 +213,13 @@ if (
       return;
     }
 
-    if (zoomLevel > 1 && event.pointerType === "touch") {
+    if (zoomLevel > 1) {
       const page = getCurrentZoomPage();
       panStart = page ? { x: event.clientX, y: event.clientY, left: page.scrollLeft, top: page.scrollTop } : null;
+      if (panStart) {
+        flipbookStage.classList.add("is-panning");
+        flipbookStage.setPointerCapture?.(event.pointerId);
+      }
       return;
     }
 
@@ -240,7 +244,7 @@ if (
       return;
     }
 
-    if (zoomLevel > 1 && panStart && event.pointerType === "touch") {
+    if (zoomLevel > 1 && panStart) {
       const page = getCurrentZoomPage();
       if (!page) return;
       event.preventDefault();
@@ -251,10 +255,14 @@ if (
 
   const finishPointer = (event) => {
     activePointers.delete(event.pointerId);
+    if (flipbookStage.hasPointerCapture?.(event.pointerId)) {
+      flipbookStage.releasePointerCapture(event.pointerId);
+    }
     if (activePointers.size < 2) pinchStartDistance = null;
     if (activePointers.size > 0) return;
 
     panStart = null;
+    flipbookStage.classList.remove("is-panning");
     if (zoomLevel > 1 || pointerStartX === null) {
       pointerStartX = null;
       pointerStartY = null;
