@@ -46,7 +46,7 @@ e citações consistentes em outros diretórios continuam sendo necessárias.
 
 ## Antes de publicar
 
-O WhatsApp já está configurado no arquivo `script.js` com o número da Padoka. Para alterá-lo no futuro, use o formato internacional sem `+`, espaços ou parênteses.
+O WhatsApp padrão do site está configurado no arquivo `script.js` com o número da Padoka 28. Os cards das lojas usam os números específicos de cada unidade. Para alterá-los no futuro, use o formato internacional sem `+`, espaços ou parênteses.
 
 ## Publicar pelo GitHub Pages
 

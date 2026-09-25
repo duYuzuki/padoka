@@ -1,10 +1,13 @@
-// Número da Padoka no formato internacional, sem espaços ou símbolos.
-const WHATSAPP_NUMBER = "5517997646614";
+// Números da Padoka no formato internacional, sem espaços ou símbolos.
+// Os botões gerais usam a unidade Padoka 28 como contato padrão. Os botões
+// dos cards de endereço podem informar um número próprio via data-whatsapp-number.
+const WHATSAPP_NUMBER = "5517997616099";
 const WHATSAPP_MESSAGE = "Olá, Padoka! Gostaria de fazer um pedido.";
-const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
+const getWhatsappUrl = (number = WHATSAPP_NUMBER) =>
+  `https://wa.me/${number}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`;
 
 document.querySelectorAll("[data-whatsapp]").forEach((link) => {
-  link.href = whatsappUrl;
+  link.href = getWhatsappUrl(link.dataset.whatsappNumber || WHATSAPP_NUMBER);
   link.target = "_blank";
   link.rel = "noopener noreferrer";
 });
